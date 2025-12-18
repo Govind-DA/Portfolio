@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Govind Krishnan - Data Analyst Portfolio</title>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="asset/css/style.css" />
+</head>
+
+<body data-theme="light">
+  <nav>
+    <!--<a href="#hero" class="nav-brand">Govind Krishnan</a>-->
+
+    <!-- Burger Menu Icon -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <!-- Dark Mode Switch -->
+    <button id="darkModeToggle" class="dark-mode-toggle"></button>
+  </nav>
+
+  <section id="hero" class="hidden">
+    <div id="hero-container">
+      <div id="hero-content">
+        <h2>
+          Hi, I’m Govind Krishnan — <span>Data Analyst</span>
+        </h2>
+        <p class="tagline">
+          I transform complex data into clear, strategic business insights that drive measurable change.
+        </p>
+        <div class="cta-buttons-container">
+          <a href="#projects" class="cta-button">View My Work</a>
+          <a
+            href="https://github.com/Govind-DA/Resume/blob/main/Govind_Krishnan_Resume.pdf"
+            download
+            class="cta-button cta-primary-btn"
+            >Download Resume</a
+          >
+        </div>
+      </div>
+      <img
+        src="asset/images/hero-avatar.png"
+        alt="Govind Krishnan"
+        class="hero-avatar"
+        onerror="this.onerror=null;this.src='https://placehold.co/200x200/4F46E5/FFFFFF?text=GK+Data';"
+      />
+    </div>
+  </section>
+
+  <section id="about" class="hidden">
+    <h2>About Me</h2>
+    <p>
+      I am a detail-oriented Data Analyst with a proven ability to translate complex numerical findings into clear, strategic business narratives. My background in Information Technology and experience at Capgemini has equipped me with strong skills in ETL processes using Python and SQL, and visualization with Power BI.
+    </p>
+    <p>
+      I am passionate about uncovering insights, improving efficiency, and supporting data-driven decision-making through analytical precision and creative problem-solving.
+    </p>
+  </section>
+
+  <section id="skills" class="hidden">
+    <h2>Technical Skills</h2>
+    <div class="technical-skills-container">
+      <div class="technical-skills-category">
+        <h4>Programming & Databases</h4>
+        <ul>
+          <li class="skill-item-logo">SQL (MySQL)</li>
+          <li class="skill-item-logo">Python (Pandas, NumPy)</li>
+        </ul>
+      </div>
+      <div class="technical-skills-category">
+        <h4>Visualization & BI</h4>
+        <ul>
+          <li class="skill-item-logo">Power BI</li>
+          <li class="skill-item-logo">Tableau</li>
+          <li class="skill-item-logo">Matplotlib / Seaborn</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="hidden">
+  <h2>Featured Projects</h2>
+
+  <div class="project-grid" id="projectGrid">
+
+    <!-- Project 1 -->
+    <div class="project-card">
+      <div class="project-image-wrapper">
+        <img
+          src="asset/images/amazon-sales.png"
+          alt="Amazon Sales Dashboard"
+          onerror="this.onerror=null;this.src='https://placehold.co/1200x600/0f0f12/FFFFFF?text=Amazon+Sales+Dashboard';"
+        />
+      </div>
+
+      <div class="project-card-content">
+        <h3>Amazon Sales Dashboard</h3>
+        <P>
+          This project presents an end-to-end analysis of Amazon sales data, aimed at uncovering key business insights related to sales performance,
+           profitability, customer demand, regional trends, and operational efficiency.
+          The dashboard enables stakeholders to make data-driven decisions by visualizing trends across time, geography, product categories, and shipping performance.
+
+        </P>
+        <p>
+          <strong>Key Insights:</strong><br>
+          • Total Sales: <strong>3.59M</strong> with Profit of <strong>108.42K</strong><br>
+          • Peak Sales Year (2014): <strong>1.27M</strong><br>
+          • Highest Sales Month: <strong>December (0.64M)</strong><br>
+          • Top Performing City: <strong>Los Angeles (0.87M)</strong><br>
+          • Best-Selling Categories: <strong>Tables</strong> and <strong>Phones</strong><br><br>
+          These insights highlight strong regional performance, seasonal demand, and opportunities for logistics optimization.
+        </p>
+
+        <p><strong>Technologies:</strong> Power BI, Python, SQL, Pandas</p>
+
+        <div class="project-links">
+          <a
+            href="https://github.com/Govind-DA/Amazon-Sales"
+            target="_blank"
+            class="project-link-btn"
+          >
+            View GitHub <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <div class="project-image-wrapper">
+        <img
+          src="asset/images/ev-analysis.png"
+          alt="Electric Vehicle Adoption Dashboard"
+          onerror="this.onerror=null;this.src='https://placehold.co/1200x600/0f0f12/FFFFFF?text=EV+Adoption+Dashboard';"
+        />
+      </div>
+
+      <div class="project-card-content">
+        <h3>Electric Vehicle Adoption</h3>
+        <P>
+          This Electric Vehicle Dashboard provides a comprehensive analysis of electric vehicle (EV) adoption across different cities, states, 
+          vehicle makes, and models. It highlights the growth of EVs over time, evaluates range performance, and assesses eligibility for clean energy incentives.
+
+
+        </P>
+        <p>
+          <strong>Key Insights:</strong><br>
+          • Total Electric Vehicles Tracked: <strong>150,480</strong><br>
+          • Average Electric Range: <strong>67.88 miles</strong><br>
+          • Battery Electric Vehicles (BEV): <strong>117K (78%)</strong><br>
+          • Plug-in Hybrid Electric Vehicles (PHEV): <strong>34K (22%)</strong><br><br>
+          These insights indicate a strong preference for full battery-electric vehicles over plug-in hybrids.
+        </p>
+
+        <p><strong>Technologies:</strong> Power BI, Python</p>
+
+        <div class="project-links">
+          <a
+            href="https://github.com/Govind-DA/Electric-Vehicle-Analysis"
+            target="_blank"
+            class="project-link-btn"
+          >
+            View GitHub <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hidden Project -->
+    <div class="project-card project-hidden">
+      <div class="project-image-wrapper">
+        <img
+          src="asset/images/GDP.png"
+          alt="Global GDP Analysis"
+          onerror="this.onerror=null;this.src='https://placehold.co/1200x600/0f0f12/FFFFFF?text=Global+GDP+Analysis';"
+        />
+      </div>
+
+      <div class="project-card-content">
+        <h3>Global GDP Analysis</h3>
+        <P>
+          This Global GDP Dashboard provides an in-depth analysis of the Gross Domestic Product (GDP) trends across multiple countries from 2020 to 2026.
+It highlights economic growth patterns, comparative performance, and future projections based on Compound Annual Growth Rate (CAGR) and historical data.  
+        </P>
+        <p>
+          <strong>Key Insights:</strong><br>
+          • Average Global GDP CAGR (2020–2025): <strong>5.80%</strong><br>
+          • Total GDP Growth (2020–2025): <strong>32.58%</strong><br>
+          • Projected Global GDP (2026): <strong>120.39M</strong><br>
+          • Total GDP (2025): <strong>616.66M</strong><br><br>
+          These metrics reflect steady post-pandemic recovery and sustained economic expansion.
+        </p>
+
+        <p><strong>Technologies:</strong> Power BI, Python</p>
+
+        <div class="project-links">
+          <a
+            href="https://github.com/Govind-DA/Global-GDP-Analysis"
+            target="_blank"
+            class="project-link-btn"
+          >
+            View GitHub <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card project-hidden">
+      <img src="asset/images/mental health.png" alt="Mental Health and Social Media">
+      <div class="project-card-content">
+        <h3>Mental Health and Social Media</h3>
+        <p>This project provides an in-depth analysis of how screen time, social media usage, offline behavior, and lifestyle patterns influence mental well-being 
+          indicators such as stress, happiness, sleep quality, and exercise frequency.It highlights digital well-being patterns, comparative platform usage, 
+          and key risk demographics based on collected user data.
+        </p>
+        <p>
+           <strong>Key Insights:</strong><br>
+            • Average Daily Screen Time: <strong>5.53 hours</strong><br>
+            • Average Stress Level: <strong>6.62</strong><br>
+            • Total High-Stress Population: <strong>29%</strong><br>
+            • Percentage of Users Taking Offline Days: <strong>61.60%</strong><br><br>
+            These metrics reflect the baseline digital exposure and mental state across the analyzed population.
+        </p>
+
+
+
+        <p><strong>Technologies:</strong> Python, SQL</p>
+        <div clas="project-links">
+          <a href="#" class="project-link-btn">
+            View GitHub <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-show-more-container">
+    <button id="showMoreProjectsBtn" class="cta-button cta-primary-btn">
+      Show More Projects
+    </button>
+  </div>
+</section>
+
+  
+  <section id="contact" class="hidden">
+    <h2>Contact</h2>
+    <p>Feel free to reach out for collaboration or to discuss data-driven insights.</p>
+    <ul class="contact-list">
+      <li>
+        <a href="mailto:gk.krishnangovind@gmail.com"
+          ><i class="fas fa-envelope"></i
+        ></a>
+      </li>
+      <li>
+        <a
+          href="https://www.linkedin.com/in/govind-krishnan-99944519a/"
+          target="_blank"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+      </li>
+      <li>
+        <a href="https://github.com/Govind-DA" target="_blank"
+          ><i class="fab fa-github"></i
+        ></a>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; <span id="currentYear"></span> Govind Krishnan. All rights reserved.</p>
+  </footer>
+
+  <a href="#hero" id="scrollToTopBtn" aria-label="Scroll to top of page">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script src="asset/js/script.js"></script>
+</body>
+</html>
