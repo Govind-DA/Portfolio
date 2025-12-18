@@ -1,0 +1,722 @@
+    /* ===========================
+    Neutral Palette - Purple Themed Portfolio
+    Includes both Li    ht and Dark Mode
+    =========================== */
+
+:root {
+    /* ---------- Neutral Palette (Light Theme Confirmation) ---------- */
+    --color-bg: #e3e3e4; /* Background: #F9FAFB */
+    --color-surface: #FFFFFF; /* Cards/Divs: #FFFFFF */
+    --color-border: #E5E7EB;
+
+    --color-text-primary: #111827; /* Text: #111827 */
+    --color-text-secondary: #6B7280;
+    --color-text-muted: #9CA3AF;
+
+    /* Defines the color/opacity part of the shadow */
+    --color-shadow-base: rgba(0, 0, 0, 0.05);
+
+    /* --- Additional Neutrals (Light Theme) --- */
+    --color-surface-subtle: #F3F4F6; /* Inner Div: #F3F4F6 */
+    --color-link-blue: #3B82F6; /* Standard blue for external links */
+
+    /* --- Theme-Specific Colors --- */
+    /* Main Brand Color (Buttons) */
+    --primary-color: #3B82F6; /* Buttons: #3B82F6 */
+    --primary-light: #0544ca; /* Button Hover: #2563EB */
+
+    /* Secondary Cool Accent (Green Accent) */
+    --accent-color: #0d9769; /* Accent Highlights: #10B981 */   
+    --accent-light: #1a6546;
+
+    /* Warm Accent / Highlight (Amber Accent) */
+    --highlight-color: #F59E0B; /* Accent Highlights: #F59E0B */
+
+    /* Feedback Colors */
+    --info-color: #60A5FA;
+    --success-color: #027a54;
+    --error-color: #EF4444;
+    --warning-color: #EF4444;
+
+    /* Combined UI Variables using new neutrals */
+    --box-shadow: 0 4px 10px var(--color-shadow-base);
+    --font-size-base: 1.05rem;
+}
+
+[data-theme="dark"] {
+    /* ---------- Dark Neutral Palette (Adjusted for soft gold hover) ---------- */
+    --color-bg: #0F0F12;
+    /* CHANGE FOR GLASS MORPHISM: Surface is now semi-transparent dark grey */
+    --color-surface: rgba(26, 26, 30, 0.85);
+    --color-border: #27272A;
+
+    --color-text-primary: #F9FAFB;
+    --color-text-secondary: #A1A1AA;
+    --color-text-muted: #71717A;
+    
+    /* Defines the color/opacity part of the shadow */
+    --color-shadow-base: rgba(0, 0, 0, 0.3);
+
+    /* --- Additional Neutrals (Dark Theme) --- */
+    --color-surface-subtle: #1F2937; /* Dark gray for subtle backgrounds/hover states */
+    --color-link-blue: #93C5FD; /* Lighter blue for external links */
+
+    /* Theme-Specific Colors (Dark Mode Adjustments) */
+    --primary-color: #818CF8;
+    --primary-light: #716be9;
+    --accent-color: #0d9769;
+    --accent-light: #1d7a53;
+    --highlight-color: #FBBF24;
+    --highlight-subtle: #D4AF37; /* Softer gold for borders/subtle accents on hover */
+    --info-color: #93C5FD;
+    --success-color: #2ab582;
+    --error-color: #F87171;
+    --warning-color: #FB923C;
+
+    /* Combined UI Variables using new neutrals */
+    --box-shadow: 0 8px 16px var(--color-shadow-base);
+}
+    
+/* --- Base Styling --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    /* Updated usage */
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    transition: background-color 0.5s, color 0.5s;
+    scroll-behavior: smooth;
+    font-size: var(--font-size-base);
+}
+
+/* Enforcing justification on content text */
+
+p, li {
+    text-align: justify;
+    margin-bottom: 15px;
+    text-indent: 0; /* Removing forced indent */
+}
+/* --- Headings --- */
+h2, h3, h4 {
+    color: var(--primary-light);
+    font-weight: 700;
+    text-align: center;
+    text-indent: 0;
+}
+
+h2 {
+    font-size: 2.3em;
+    margin-bottom: 40px;
+}
+
+/* --- Navigation --- */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* Updated usage */
+    background-color: var(--color-surface);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.nav-brand {
+    font-weight: 700;
+    font-size: 1.5em;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    /* Updated usage */
+    color: var(--color-text-primary);
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 600;
+}
+
+nav a:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 30px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.dark-mode-toggle {
+    cursor: pointer;
+    width: 50px;
+    height: 25px;
+    background-color: var(--primary-color);
+    border-radius: 15px;
+    position: relative;
+    border: none;
+    margin-left: 15px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode-toggle::after {
+    content: '☀️';
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    width: 21px;
+    height: 21px;
+    /* Updated usage */
+    background-color: var(--color-surface);
+    border-radius: 50%;
+    transition: left 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55), background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+[data-theme="dark"] .dark-mode-toggle::after {
+    content: '🌙';
+    left: 26px;
+    background-color: var(--accent-color);
+}
+
+/* --- Sections --- */
+section {
+    padding: 50px 30px;
+    margin: 30px auto;
+    max-width: 1200px;
+    /* Updated usage */
+    background-color: var(--color-surface);
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    /* Keep transition here for all sections */
+    transition: all 0.6s ease;
+}
+
+/* --- Reveal Animation START State (Hidden by default in HTML) --- */
+.hidden {
+    opacity: 0; 
+    filter: blur(5px);
+    transform: translateY(20px);
+}
+
+/* --- Reveal Animation END State (Applied by JS) --- */
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+/* --- Hero Section --- */
+#hero {
+    min-height: 80vh;
+    /* Updated usage */
+    background: var(--color-surface);
+    padding-top: 100px;
+    /* Using background image effects */
+    background-image: radial-gradient(circle at top right, rgba(65, 58, 195, 0.2), transparent),
+                      radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.2), transparent);
+    background-size: 400px 400px, 300px 300px;
+    background-position: top right, bottom left;
+    background-repeat: no-repeat;
+}
+
+#hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    gap: 40px;
+}
+
+#hero h2 {
+    font-size: 3.5em;
+    font-weight: 700;
+    margin: 0 0 15px;
+    text-align: left;
+    /* Updated usage */
+    color: var(--color-text-primary);
+}
+
+#hero h2 span {
+    color: var(--primary-color);
+}
+
+#hero p.tagline {
+    font-size: 1.3em;
+    margin: 0 0 30px 0;
+    /* Using the new text secondary color for dimming/opacity */
+    color: var(--color-text-secondary);
+    opacity: 1;
+    max-width: 500px;
+    text-align: left;
+}
+
+.hero-avatar {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 8px solid var(--primary-light);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-buttons-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: flex-start;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    background-color: var(--accent-light);
+
+    box-shadow: 0 8px 15px rgba(99, 226, 137, 0.2);
+}
+
+.cta-primary-btn {
+    background-color: var(--primary-color);
+}
+
+.cta-primary-btn:hover {
+    background-color: var(--primary-light);
+}
+
+/* --- Skills --- */
+.technical-skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.technical-skills-category {
+    /* Updated usage */
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 20px;
+    /* Updated usage */
+    background-color: var(--color-surface);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.technical-skills-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark theme specific hover effect for technical skills */
+[data-theme="dark"] .technical-skills-category:hover {
+    border-color: var(--highlight-color);
+}
+
+.technical-skills-category h4 {
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.technical-skills-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-item-logo {
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    /* Updated usage */
+    background-color: var(--color-bg);
+    transition: background-color 0.3s;
+    font-size: var(--font-size-base);
+}
+
+/* --- Projects --- */
+.project-grid {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.project-card {
+    /* Updated usage */
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Dark theme specific hover effect for project cards */
+[data-theme="dark"] .project-card:hover {
+    border-color: var(--highlight-color);
+}
+
+.project-image-wrapper {
+  padding: 12px;                /* buffer space */
+  background-color: #0f0f12;    /* dashboard-safe background */
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  max-height: 320px;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+}
+
+
+.project-card-content {
+    padding: 20px;
+}
+
+.project-card-content h3 {
+    text-align: left;
+    margin-top: 0;
+    /* Updated usage */
+    color: var(--color-text-primary);
+    font-weight: 600;
+}
+
+.project-links {
+    margin-top: 20px;
+}
+
+.project-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.project-link-btn:hover {
+    background-color: var(--primary-light);
+    transform: scale(1.02);
+}
+
+.project-hidden {
+    display: none;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, display 0.5s;
+}
+
+.project-visible {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.project-show-more-container {
+    text-align: center;
+}
+
+/* Mobile: 1 project per row */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Contact --- */
+#contact {
+    text-align: center;
+}
+
+/* FIX: Ensure the descriptive paragraph text is centered, overriding the global justify rule */
+#contact p {
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.contact-list {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.contact-list a {
+    color: var(--primary-color);
+    font-size: 2.5em;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.contact-list a:hover {
+    color: var(--accent-color);
+    transform: scale(1.15);
+}
+
+/* --- Footer (Centering confirmed and enforced with flexbox) --- */
+footer {
+    /* Use Flexbox to ensure perfect vertical and horizontal centering of all children */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 20px;
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+    border-top: 1px solid var(--color-border);
+    margin-top: 0;
+    
+    /* text-align: center is removed as flexbox handles the centering */
+}
+
+/* Ensure the paragraph inside the footer is not constrained */
+footer p {
+    text-align: center;
+    margin: 0; /* Remove default paragraph margins that might cause offset */
+}
+
+
+/* --- Scroll to Top Button --- */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+    width: 50px;
+    height: 50px;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1.5em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    display: none; /* Hidden by default in JS */
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s, background-color 0.3s;
+}
+
+#scrollToTopBtn:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+#scrollToTopBtn.visible {
+    display: block;
+    opacity: 1;
+}
+
+/* --- Glass Morphism for Dark Theme --- */
+[data-theme="dark"] nav, 
+[data-theme="dark"] section,
+[data-theme="dark"] .technical-skills-category,
+[data-theme="dark"] .project-card
+{
+    /* Core Glass Effect: Apply blur to the background content */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px); 
+}
+
+[data-theme="dark"] nav {
+    /* Override existing nav shadow for a deeper glass look */
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+    /* Add a subtle, light border on the bottom edge for frosted effect */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    border-top: none;
+}
+
+[data-theme="dark"] section {
+    /* Override standard border with a light, frosted glass border */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Adjust box shadow for depth and light reflection */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Dark theme hover for skill and project cards */
+[data-theme="dark"] .technical-skills-category:hover,
+[data-theme="dark"] .project-card:hover {
+    /* Updated to use the new subtle highlight color for a less bright border */
+    border-color: var(--highlight-subtle); 
+    /* Updated for a much softer glow (using subtle color's RGB and very low opacity) */
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.12);
+}
+
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 900px) {
+    #hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    #hero h2, #hero p.tagline {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .cta-buttons-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .hero-avatar {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 10px 20px;
+    }
+    
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        /* Updated usage */
+        background-color: var(--color-surface);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+    
+    nav a {
+        padding: 10px 20px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+    
+    h2 {
+        font-size: 1.8em;
+    }
+    
+    #hero h2 {
+        font-size: 2.5em;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-list {
+        gap: 30px;
+    }
+    
+    #scrollToTopBtn {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-surface);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .nav-links.open {
+    display: flex;
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--color-text-primary);
+    font-size: 1.8em;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .menu-toggle:hover {
+    color: var(--primary-color);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
